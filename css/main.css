@@ -87,6 +87,63 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body {
+  height: 100vh;
+}
+
+header {
+  font-family: 'New Tegomin', serif;
+}
+
+footer {
+  font-family: 'Zen Dots', cursive;
+}
+
+/* Configuration spéciale pour une taille d'écran de 320 pixels */
+@media screen and (max-width: 320px) {
+  #smallConfigHead, #smallConfigFoot  {
+    display: none;
+  }
+}
+
+/* A partir d'une taille d'écran de 768 pixels */
+@media screen and (min-width: 768px) {
+  main {
+    height: 50%;
+  }
+  #smallConfigHead {
+    max-width: 90%;
+    margin: auto;
+  }
+  #smallConfigFoot {
+    max-width: 90%;
+    margin: auto;
+  }
+  #gameDiv {
+    max-width: 90%;
+    max-height: 30%;
+    margin: auto;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+  .card-body {
+    height: 35%;
+    max-height: 15vh;
+    max-width: 8vh;
+  }
+  header {
+    font-family: 'New Tegomin', serif;
+    height: 40%;
+  }
+  hr {
+    margin: auto;
+  }
+  footer {
+    font-family: 'Zen Dots', cursive;
+    height: 10%;
+  }
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
