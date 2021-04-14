@@ -99,6 +99,13 @@ footer {
   font-family: 'Zen Dots', cursive;
 }
 
+.card {
+  /* padding: 0.5em; */
+  height: 10vh;
+  margin: 0.5em 0;
+  background-color: black;
+}
+
 /* Configuration spéciale pour une taille d'écran de 320 pixels */
 @media screen and (max-width: 320px) {
   #smallConfigHead, #smallConfigFoot  {
@@ -126,11 +133,7 @@ footer {
     padding-top: 4%;
     padding-bottom: 4%;
   }
-  .card-body {
-    height: 35%;
-    max-height: 15vh;
-    max-width: 8vh;
-  }
+
   header {
     font-family: 'New Tegomin', serif;
     height: 40%;
