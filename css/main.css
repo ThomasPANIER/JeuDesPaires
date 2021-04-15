@@ -104,6 +104,13 @@ footer {
   height: 10vh;
   margin: 0.5em 0;
   background-color: black;
+  transform-style: preserve-3d;
+  transition: 2s;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  background-color: green;
 }
 
 .flip-card-front {
