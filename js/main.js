@@ -1,16 +1,28 @@
-let cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card");
 
-console.log(cards);
+cards.forEach(card => addEventListener("click", flipCard));
 
-const colors = ["red", "green", "yellow", "blue", "purple", "pink", "red", "green", "yellow", "blue", "purple", "pink"];
-
-for (card of cards) {
-  card.onclick = function(){
-    alert("coucou");
-    card.style.backgroundColor = colors[1];
-  };  
+function flipCard() {
+  console.log(this);
+  console.log("C'est cliqué");
 }
 
-for (i=0; colors.length; i++) {
+// console.log(cards);
 
-}
+// const colors = ["red", "green", "yellow", "blue", "purple", "pink", "red", "green", "yellow", "blue", "purple", "pink"];
+
+// function choosenCard(){
+//   for (card of cards) {
+//     this.onclick = function(){
+//       alert("coucou");
+//       card.style.backgroundColor = colors[0];
+//     };  
+//   }
+// }
+
+// for (i=0; cards < 12; i++) {
+//    cards = choosenCard(){
+     
+//    };
+
+// }
