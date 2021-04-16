@@ -99,31 +99,75 @@ footer {
   font-family: 'Zen Dots', cursive;
 }
 
-.card {
+.gameCard {
   /* padding: 0.5em; */
   height: 10vh;
   margin: 0.5em 0;
-  background-color: black;
-  transform-style: preserve-3d;
+  /* background-color: black; */
+  /* transform-style: preserve-3d; */
   transition: 2s;
 }
-
+/* ===================================================
+   Configuration une fois la fonction flipCard activée
+   =================================================== */
 .flip {
   transform: rotateY(180deg);
-  background-color: green;
+  /* background-color: green; */
+  height: 10vh;
 }
 
-.flip-card-front {
+/* .front, .back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+} */
+
+.back {
   background-color: black;
   color: white;
   text-align: center;
-  
+  height: 100%;
 }
 
-.flip-card-back {
+/* .front {
   background-color: blue;
-  transform: rotateY(180deg);
+  /* height: 100%; */
+  /* -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+} */
+/* ==================================== */
+.flip [data-name="yellow"] {
+  background-color: yellow;
+  color: yellow;
 }
+
+.flip [data-name="red"] {
+  background-color: red;
+  color: red;
+}
+
+.flip [data-name="green"] {
+  background-color: green;
+  color: green;
+}
+
+.flip [data-name="purple"] {
+  background-color: purple;
+  color: purple;
+}
+
+.flip [data-name="blue"] {
+  background-color: blue;
+  color: blue;
+}
+
+.flip [data-name="grey"] {
+  background-color: grey;
+  color: grey;
+}
+/* ====================================== */
+
+
 
 /* Configuration spéciale pour une taille d'écran de 320 pixels
 @media screen and (max-width: 320px) {
