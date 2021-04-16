@@ -1,3 +1,6 @@
+// Récupérer les balises html <section> sous forme de tableau
+const sections = document.querySelectorAll(".col-3");
+//console.log(sections);
 
 // Récupérer les éléments html card sous forme de tableau.
 const cards = document.querySelectorAll(".gameCard");
@@ -6,23 +9,16 @@ const cards = document.querySelectorAll(".gameCard");
 // La méthode forEach() permet d'exécuter une fonction donnée sur chaque élément du tableau.
   // on ajoute ensuite aux éléments un écouteur d'événements qui sera un click sur une card pour y ajouter la fonction. 
 cards.forEach(card => card.addEventListener("click", flipCard));
-// for (card of cards) {
-//   card = card.addEventListener("click", flipCard);
-//   //console.log();
-// }
+// Même finalité que la fonction fléché.
+  // for (card of cards) {
+  //   card = card.addEventListener("click", flipCard);
+  //   //console.log();
+  // }
 
 
-
-//par default la class "flip" n'est pas mise.
-//let addedFlipClass = false;
-
-// 1ere et 2eme card retournée.
-let cardOne;
-let cardTwo;
-let test = [];
-
-//let dataColor = document.querySelectorall('.card.flip');
-// console.log("dataColor");
+// Stocker les choix de l'utilisateur pour la 1ere et 2eme card et comparer les choix.
+  // Les cartes retournées sont stocker dans un tableau vide.
+let choiceCard = [];
 
 // Fonction flipCard() déclenchée par foreach() permet d'accéder à la classe de card pour appliquer la méthode toggle.
   // Utilisation de la méthode toggle pour cacher ou montrer un élément du dom.
@@ -30,35 +26,76 @@ function flipCard() {
   //this.classList.toggle("flip");
   this.classList.add("flip");
   console.log(this);
-  test.push(this);
-  console.log(test);
-    if (test.length === 2) {
+  // insérer les choix dans le tableau vide.
+  choiceCard.push(this);
+  console.log(choiceCard);
+  // Vérifier qu'il y a bien 2 card dans le tableau pour pouvoir comparer.
+    if (choiceCard.length === 2) {
       compareCard();
-      
-    }
-  
-//}  
+    } 
 };
 
-//style = "background-color:blue";
-//test[0].style.backgroundColor === ....
-
+// Fonction compareCard pour identifier les cartes avec data-name et comparer si identique.
 function compareCard() {
-  if (test[0].dataset.name === test[1].dataset.name) {
-    alert("identique");
-    console.log(test[0].dataset.name);
+  if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
+    //alert("identique");
+    console.log(choiceCard[0].dataset.name);
+    // choiceCard[0].removeEventListener(("click", flipCard));
+    // choiceCard[1].removeEventListener(("click", flipCard));
   }
+  // si choix pas identiques enlève la classe "flip" pour cacher de nouveau les card.
   else {
-    test[0].classList.remove("flip");
-    test[1].classList.remove("flip");
+    
+    //for (card of choiceCard) {
+      //card = choiceCard.setTimeout(() => {classList.remove("flip")}, 2000);
+              //   card = myFunction();
+    // }
+
+              // function myFunction() {
+              //   setTimeout(function(){ classList.remove("flip"); }, 3000);
+              // }
+
+    choiceCard[0].classList.remove("flip");
+    choiceCard[1].classList.remove("flip");
+    //}
   }
-  test = [];
-}
+  // Remet le tableau de stockage des choix à vide.
+  choiceCard = [];
+  
+};
 
 
-// Déterminer si l'utilisateur click sur la 1ere ou 2eme card et comparer les choix
-  
-  
+shuffle();
+// Fonction pour manipuler les balises html ciblées et les diposer de manière aléatoire.
+function shuffle() {
+  sections.forEach(section => {
+    let randomPosition = Math.floor(Math.random() * 12);
+    section.style.order = randomPosition;
+  });
+};
+
+
+// setTimeout(() => { 
+//   choiceCard.classList.remove("flip");
+//   choiceCard.classList.remove("flip");
+// }, 2000);
+
+// choiceCard[0] = myFunction();
+// choiceCard[1] = myFunction();
+// function myFunction() {
+//   setTimeout(function(){ choiceCard.classList.remove("flip"); }, 1500);
+// }
+
+
+
+
+
+//par default la class "flip" n'est pas mise.
+// let addedFlipClass = false;
+// let cardOne;
+// let cardTwo;  
+
+
 //   if (!addedFlipClass) {
 //     addedflipClass = true;
 //     cardOne = this;
