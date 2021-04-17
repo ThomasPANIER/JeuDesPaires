@@ -110,22 +110,15 @@ footer div {
   margin-bottom: 2em;
 }
 
-/* p {
-  margin-top: 1em;
-} */
-
 a {
   text-decoration: none;
   color: black;
 }
 
 .gameCard {
-  /* padding: 0.5em; */
   height: 15vh;
   margin: 0.5em 0;
-  /* background-color: black; */
-  /* transform-style: preserve-3d; */
-  transition: 2s;
+  transition: 1s;
 }
 
 .back {
@@ -135,32 +128,14 @@ a {
   height: 100%;
 }
 
-
-
-
 /* ===================================================
    Configuration une fois la fonction flipCard activée
    =================================================== */
 .flip {
-  transform: rotateY(180deg);
-  /* background-color: green; */
+  transform: rotate3d(0,1,1,360deg);
+  /* transform: rotateY(180deg); */
   height: 15vh;
 }
-
-/* .front, .back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-} */
-
-
-
-/* .front {
-  background-color: blue;
-  /* height: 100%; */
-  /* -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  
-} */
 
 /* Configuration spéciale pour une taille d'écran de 320 pixels */
 @media screen and (max-width: 320px) {
@@ -169,7 +144,7 @@ a {
   }
 }
 
-/* A partir d'une taille d'écran de 768 pixels */
+/* A partir d'une taille d'écran de 1024 pixels */
 @media screen and (min-width: 1024px) {
   .gameCard {
     height: 20vh;
@@ -212,43 +187,6 @@ a {
   background-color: grey;
   color: grey;
 }
-/* ====================================== */
-
-
-
-/* A partir d'une taille d'écran de 768 pixels */
-/* @media screen and (min-width: 768px) {
-  main {
-    height: 60%;
-  }
-  #smallConfigHead {
-    max-width: 90%;
-    margin: auto;
-  }
-  #smallConfigFoot {
-    max-width: 90%;
-    margin: auto;
-  }
-  
-  #gameDiv {
-  max-width: 90%;
-  margin: auto;
-  padding-top: 4%;
-  padding-bottom: 4%;
-}
-
-  header {
-    font-family: 'New Tegomin', serif;
-    height: 30%;
-  }
-  hr {
-    margin: auto;
-  }
-  footer {
-    font-family: 'Zen Dots', cursive;
-    height: 10%;
-  }
-} */
 
 /* ==========================================================================
    Helper classes

@@ -21,10 +21,8 @@ let choiceCard = [];
 function flipCard() {
   // Ajout de la classe "flip" à l'élément card.
   this.classList.add("flip");
-  console.log(this);
   // insérer les choix dans le tableau vide choiceCard.
   choiceCard.push(this);
-  console.log(choiceCard);
   // Vérifier qu'il y a bien 2 card dans le tableau pour pouvoir comparer.
     // si plus de 2 card choisi lancer une alert et retourner les card.
     if  (choiceCard.length > 2) {
@@ -33,8 +31,8 @@ function flipCard() {
     }
     // si le bon nombre de card est choisi lancer la comparaison.  
     else if (choiceCard.length === 2) {
-      // la methode setTimeOut permet de différer la fonction compareCard de 2s.
-      setTimeout(function(){compareCard();}, 2000);
+      // la methode setTimeOut permet de différer la fonction compareCard de 1s.
+      setTimeout(function(){compareCard();}, 1000);
     }  
 };
 
@@ -43,19 +41,19 @@ function compareCard() {
   if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
     // si toutes les paires sont trouvées, proposition de recommencer le jeu.
     let winningPair = document.querySelectorAll(".flip");
-    if (paire.length === 12) {
+    if (winningPair.length === 12) {
       alert("jeu fini ! Pour rejouer cliquez sur Jeu des paires");
-      console.log(winningPair.length);
     }
     // sinon le jeu continue.
-    else {
-    win();
-    console.log(choiceCard[0].dataset.name);
-    }  
+
+    // else {
+    // win();
+    // console.log(choiceCard[0].dataset.name);
+    // }  
   }
   // si choix pas identiques enlève la classe "flip" pour cacher de nouveau les card.
   else {
-    loose();
+    //loose();
     choiceCard[0].classList.remove("flip");
     choiceCard[1].classList.remove("flip");
   }
@@ -63,16 +61,13 @@ function compareCard() {
   choiceCard = [];
 };
 
+// function win() {
+//   alert("une paire trouvée !");
+// };
 
-
-
-function win() {
-  alert("une paire trouvée !");
-};
-
-function loose() {
-  alert("ce n'est pas une paire");
-};
+// function loose() {
+//   alert("ce n'est pas une paire");
+// };
 
 // Fonction pour ranger les balises html ciblées et les redisposer de manière aléatoire.
 (function shuffle() {
