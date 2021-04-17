@@ -1,4 +1,4 @@
-// Récupérer les balises html <section> sous forme de tableau
+// Récupérer les balises html <section> sous forme de tableau.
 const sections = document.querySelectorAll(".col-3");
 
 // Récupérer les éléments html card sous forme de tableau.
@@ -38,23 +38,33 @@ function flipCard() {
     }  
 };
 
-
-
 // Fonction compareCard pour identifier les cartes avec data-name et comparer si identique.
 function compareCard() {
   if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
+    // si toutes les paires sont trouvées, proposition de recommencer le jeu.
+    let winningPair = document.querySelectorAll(".flip");
+    if (paire.length === 12) {
+      alert("jeu fini ! Pour rejouer cliquez sur Jeu des paires");
+      console.log(winningPair.length);
+    }
+    // sinon le jeu continue.
+    else {
     win();
-    console.log(choiceCard[0].dataset.name);       
+    console.log(choiceCard[0].dataset.name);
+    }  
   }
   // si choix pas identiques enlève la classe "flip" pour cacher de nouveau les card.
   else {
     loose();
     choiceCard[0].classList.remove("flip");
     choiceCard[1].classList.remove("flip");
-  };
+  }
   // Remet le tableau de stockage des choix à vide.
-  choiceCard = [];  
+  choiceCard = [];
 };
+
+
+
 
 function win() {
   alert("une paire trouvée !");
@@ -65,10 +75,10 @@ function loose() {
 };
 
 // Fonction pour ranger les balises html ciblées et les redisposer de manière aléatoire.
-function shuffle() {
+(function shuffle() {
   sections.forEach(section => {
     let randomPosition = Math.floor(Math.random() * 12);
     section.style.order = randomPosition;
   });
-};
-shuffle();
+})();
+//shuffle();
