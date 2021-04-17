@@ -87,50 +87,134 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-body {
+#gameDiv {
   height: 100vh;
+  width: 100%;
 }
 
 header {
   font-family: 'New Tegomin', serif;
+  color: black;
 }
 
-footer {
+section {
+  flex-wrap: wrap;
+}
+
+footer div {
+  padding-top: 1em;
   font-family: 'Zen Dots', cursive;
 }
 
-.card {
+#smallConfigFoot {
+  margin-bottom: 2em;
+}
+
+/* p {
+  margin-top: 1em;
+} */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.gameCard {
   /* padding: 0.5em; */
-  height: 10vh;
+  height: 15vh;
   margin: 0.5em 0;
-  background-color: black;
-  transform-style: preserve-3d;
+  /* background-color: black; */
+  /* transform-style: preserve-3d; */
   transition: 2s;
 }
 
-.flip {
-  transform: rotateY(180deg);
-  background-color: green;
-}
-
-.flip-card-front {
+.back {
   background-color: black;
   color: white;
   text-align: center;
-  
+  height: 100%;
 }
 
-.flip-card-back {
-  background-color: blue;
+
+
+
+/* ===================================================
+   Configuration une fois la fonction flipCard activée
+   =================================================== */
+.flip {
   transform: rotateY(180deg);
+  /* background-color: green; */
+  height: 15vh;
 }
 
-/* Configuration spéciale pour une taille d'écran de 320 pixels
+/* .front, .back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+} */
+
+
+
+/* .front {
+  background-color: blue;
+  /* height: 100%; */
+  /* -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+} */
+
+/* Configuration spéciale pour une taille d'écran de 320 pixels */
 @media screen and (max-width: 320px) {
-  #smallConfigHead, #smallConfigFoot  {
+  #smallConfigFoot  {
     display: none;
   }
-} */
+}
+
+/* A partir d'une taille d'écran de 768 pixels */
+@media screen and (min-width: 1024px) {
+  .gameCard {
+    height: 20vh;
+  }
+  .flip {
+    height: 20vh;
+  }
+}
+
+/*=================================== 
+  Configuration pour l'affichage des 
+  couleurs des cartes retournéés.
+  ===================================*/
+.flip [data-name="yellow"] {
+  background-color: yellow;
+  color: yellow;
+}
+
+.flip [data-name="red"] {
+  background-color: red;
+  color: red;
+}
+
+.flip [data-name="green"] {
+  background-color: green;
+  color: green;
+}
+
+.flip [data-name="purple"] {
+  background-color: purple;
+  color: purple;
+}
+
+.flip [data-name="blue"] {
+  background-color: blue;
+  color: blue;
+}
+
+.flip [data-name="grey"] {
+  background-color: grey;
+  color: grey;
+}
+/* ====================================== */
+
+
 
 /* A partir d'une taille d'écran de 768 pixels */
 /* @media screen and (min-width: 768px) {
@@ -145,12 +229,13 @@ footer {
     max-width: 90%;
     margin: auto;
   }
+  
   #gameDiv {
-    max-width: 90%;
-    margin: auto;
-    padding-top: 4%;
-    padding-bottom: 4%;
-  }
+  max-width: 90%;
+  margin: auto;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
 
   header {
     font-family: 'New Tegomin', serif;

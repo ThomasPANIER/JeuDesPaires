@@ -27,12 +27,14 @@
 
 <body>
 
-  <div class="container-fluid bg-secondary">
+  <div id="gameDiv" class="container-fluid bg-secondary">
 
     <header class="bg-secondary text-center m-0 p-1">
       <div id="smallConfigHead">
-        <p class="fs-1">Jeu des paires</p>
-        <p id="mediumConfig" class="fs-3">
+        <p class="fs-1">
+          <a href="index.html" title="Recommencer une partie">Jeu des paires</a>
+        </p>
+        <p class="fs-3">
           <hr>
           Le but du jeu est de cliquer sur les cartes pour retrouver les paires de la même couleur.
         </p>
@@ -42,69 +44,112 @@
 
     <main class="container-fluid mt-0">
 
-      <div id="gameDiv" class="row d-flex justify-content-evenly bg-light">
+      <div class="row d-flex justify-content-evenly bg-light">
 
-        <section class="col-3 col-sm-2">
-          <div class="card">
-            <div class="flip-card-front ">
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="yellow">
+            <div class="back" data-name="yellow">
               ?
             </div>
-            <div class="flip-card-back">
+          </div>
+        </section>
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="yellow">
+            <div class="back" data-name="yellow">
+              ?
             </div>
-        </div>
-        </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="red">
+            <div class="back" data-name="red">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="red">
+            <div class="back" data-name="red">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="green">
+            <div class="back" data-name="green">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="purple">
+            <div class="back" data-name="purple">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="grey">
+            <div class="back" data-name="grey">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="grey">
+            <div class="back" data-name="grey">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="blue">
+            <div class="back" data-name="blue">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="purple">
+            <div class="back" data-name="purple">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="green">
+            <div class="back" data-name="green">
+              ?
+            </div>
           </div>
         </section>
-        <section class="col-3 col-sm-2">
-          <div class="card ">
+
+        <section class="col-3 col-sm-3">
+          <div class="gameCard" data-name="blue">
+            <div class="back" data-name="blue">
+              ?
+            </div>
           </div>
         </section>
+
       </div>
 
     </main>
 
 
     <footer class="bg-secondary m-0 p-1">
-      <div id="smallConfigFoot" class="row">
-        <p class="fs-6 text-center">
+      <div class="row">
+        <p id="smallConfigFoot" class="fs-6 text-center">
           Jouer à ce jeu en mangeant du poisson améliore la mémoire et peut-être le QI !
         </p>
         <p class="d-flex justify-content-evenly">
