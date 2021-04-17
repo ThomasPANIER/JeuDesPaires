@@ -15,7 +15,6 @@ cards.forEach(card => card.addEventListener("click", flipCard));
   //   //console.log();
   // }
 
-
 // Stocker les choix de l'utilisateur pour la 1ere et 2eme card et comparer les choix.
   // Les cartes retournées sont stocker dans un tableau vide.
 let choiceCard = [];
@@ -31,7 +30,8 @@ function flipCard() {
   console.log(choiceCard);
   // Vérifier qu'il y a bien 2 card dans le tableau pour pouvoir comparer.
     if (choiceCard.length === 2) {
-      compareCard();
+      // la methode setTimeOut permet de différer la fonction compareCard de 2s.
+      setTimeout(function(){compareCard();}, 2000);
     } 
 };
 
@@ -42,37 +42,56 @@ function compareCard() {
     console.log(choiceCard[0].dataset.name);
     // choiceCard[0].removeEventListener(("click", flipCard));
     // choiceCard[1].removeEventListener(("click", flipCard));
+    setTimeout(win, 1000);
+    
   }
   // si choix pas identiques enlève la classe "flip" pour cacher de nouveau les card.
   else {
-    
-    //for (card of choiceCard) {
-      //card = choiceCard.setTimeout(() => {classList.remove("flip")}, 2000);
-              //   card = myFunction();
-    // }
-
-              // function myFunction() {
-              //   setTimeout(function(){ classList.remove("flip"); }, 3000);
-              // }
-
+    loose();
+    //setTimeout(function(){choiceCard[0].classList.remove("flip");choiceCard[1].classList.remove("flip");},2000);
     choiceCard[0].classList.remove("flip");
     choiceCard[1].classList.remove("flip");
-    //}
-  }
+    
+    //setTimeout(function(){looseChoice(); loose();}, 2000);
+    
+
+    
+  };
   // Remet le tableau de stockage des choix à vide.
   choiceCard = [];
   
 };
 
+function win() {
+  alert("une paire trouvée !");
+}
+
+function loose() {
+  
+  // choiceCard.forEach(choice => choice.classList.remove("flip"));
+  alert("ce n'est pas une paire");
+};
+
 
 shuffle();
-// Fonction pour manipuler les balises html ciblées et les diposer de manière aléatoire.
+// Fonction pour ranger les balises html ciblées et les redisposer de manière aléatoire.
 function shuffle() {
   sections.forEach(section => {
     let randomPosition = Math.floor(Math.random() * 12);
     section.style.order = randomPosition;
   });
 };
+
+
+
+
+
+//for (card of choiceCard) {
+      //card = choiceCard.setTimeout(() => {classList.remove("flip")}, 2000);
+              //   card = myFunction();
+    // }
+
+     
 
 
 // setTimeout(() => { 
