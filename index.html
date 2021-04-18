@@ -15,7 +15,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-
+  <link rel="shortcut icon" type="image/x-icon" href="img/game_icon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Zen+Dots&display=swap" rel="stylesheet"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -26,131 +26,117 @@
 </head>
 
 <body>
-
+  <!-- Block visible for the page that contains the game -->
   <div id="gameDiv" class="container-fluid bg-secondary">
-
+    <!-- Game page header -->
     <header class="bg-secondary text-center m-0 p-1">
-      <div id="smallConfigHead">
+      <div>
         <p class="fs-1">
+          <img src="img/game_logo2.png" alt="Logo">
           <a href="index.html" title="Recommencer une partie">Jeu des paires</a>
+          <img src="img/game_logo.png" alt="Logo">
         </p>
+        <hr>
         <p class="fs-3">
-          <hr>
           Le but du jeu est de cliquer sur les cartes pour retrouver les paires de la même couleur.
         </p>
       </div>
     </header>
-
-
+    <!-- Block that contains the <section> of playing cards -->
     <main class="container-fluid mt-0">
-
       <div class="row d-flex justify-content-evenly bg-light">
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="yellow">
             <div class="back" data-name="yellow">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="yellow">
             <div class="back" data-name="yellow">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="red">
             <div class="back" data-name="red">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="red">
             <div class="back" data-name="red">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="green">
             <div class="back" data-name="green">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="purple">
             <div class="back" data-name="purple">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="grey">
             <div class="back" data-name="grey">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="grey">
             <div class="back" data-name="grey">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="blue">
             <div class="back" data-name="blue">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="purple">
             <div class="back" data-name="purple">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="green">
             <div class="back" data-name="green">
               ?
             </div>
           </div>
         </section>
-
-        <section class="col-3 col-sm-3">
+        <section class="col-3">
           <div class="gameCard" data-name="blue">
             <div class="back" data-name="blue">
               ?
             </div>
           </div>
         </section>
-
       </div>
-
     </main>
-
-
-    <footer class="bg-secondary m-0 p-1">
+    <!-- Game footer -->
+    <footer id="smallConfigFoot" class="bg-secondary m-0 p-0">
       <div class="row">
-        <p id="smallConfigFoot" class="fs-6 text-center">
-          Jouer à ce jeu en mangeant du poisson améliore la mémoire et peut-être le QI !
+        <!--Removable "smallConfigFoot" part according to the screen size -->
+        <p id="mediumConfigFoot" class="fs-6 text-center">
+          Jouer à ce jeu en mangeant du poisson améliore la mémoire et peut-être même le QI !
         </p>
         <p class="d-flex justify-content-evenly">
           <i class="fab fa-twitter-square"></i>

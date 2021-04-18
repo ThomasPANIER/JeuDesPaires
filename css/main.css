@@ -83,18 +83,26 @@ textarea {
   resize: vertical;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+/*==========================================================================
+  Author's custom styles
+  ========================================================================== */
+body {
+  height: 100vh;
+  background-color: #70757a;
+}
 
 #gameDiv {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
 header {
   font-family: 'New Tegomin', serif;
   color: black;
+}
+
+img {
+  max-width: 5%;
 }
 
 section {
@@ -110,22 +118,15 @@ footer div {
   margin-bottom: 2em;
 }
 
-/* p {
-  margin-top: 1em;
-} */
-
 a {
   text-decoration: none;
   color: black;
 }
 
 .gameCard {
-  /* padding: 0.5em; */
   height: 15vh;
   margin: 0.5em 0;
-  /* background-color: black; */
-  /* transform-style: preserve-3d; */
-  transition: 2s;
+  transition: 1s;
 }
 
 .back {
@@ -135,54 +136,19 @@ a {
   height: 100%;
 }
 
-
-
-
-/* ===================================================
-   Configuration une fois la fonction flipCard activée
-   =================================================== */
+/*===========================================================
+  Configuration once the flipCard function has been activated
+  =========================================================== */
 .flip {
-  transform: rotateY(180deg);
-  /* background-color: green; */
+  transform: rotate3d(0,1,1,360deg);
+  /* transform: rotateY(180deg); */
   height: 15vh;
 }
 
-/* .front, .back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-} */
-
-
-
-/* .front {
-  background-color: blue;
-  /* height: 100%; */
-  /* -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  
-} */
-
-/* Configuration spéciale pour une taille d'écran de 320 pixels */
-@media screen and (max-width: 320px) {
-  #smallConfigFoot  {
-    display: none;
-  }
-}
-
-/* A partir d'une taille d'écran de 768 pixels */
-@media screen and (min-width: 1024px) {
-  .gameCard {
-    height: 20vh;
-  }
-  .flip {
-    height: 20vh;
-  }
-}
-
-/*=================================== 
-  Configuration pour l'affichage des 
-  couleurs des cartes retournéés.
-  ===================================*/
+/*============================
+  Configuration for displaying
+  colors of returned cards. 
+  ============================*/
 .flip [data-name="yellow"] {
   background-color: yellow;
   color: yellow;
@@ -212,43 +178,44 @@ a {
   background-color: grey;
   color: grey;
 }
-/* ====================================== */
 
+/*========================================
+  Configuration for different screen sizes 
+  ========================================*/
 
-
-/* A partir d'une taille d'écran de 768 pixels */
-/* @media screen and (min-width: 768px) {
-  main {
-    height: 60%;
+/* Special configuration for a screen size
+   320 pixels and less */
+@media screen and (max-width: 320px) {
+  #smallConfigFoot  {
+    display: none;
   }
-  #smallConfigHead {
-    max-width: 90%;
-    margin: auto;
-  }
-  #smallConfigFoot {
-    max-width: 90%;
-    margin: auto;
-  }
-  
-  #gameDiv {
-  max-width: 90%;
-  margin: auto;
-  padding-top: 4%;
-  padding-bottom: 4%;
 }
 
-  header {
-    font-family: 'New Tegomin', serif;
-    height: 30%;
+/* Special configuration for a screen size
+   768 pixels and less */
+@media screen and (max-width: 768px) {
+  img {
+    max-width: 10%;
   }
-  hr {
-    margin: auto;
+}
+
+/* Special configuration for a screen height
+   768 pixels and less */
+   @media screen and (max-height: 768px) {
+    #mediumConfigFoot{
+      display: none;
+    }
   }
-  footer {
-    font-family: 'Zen Dots', cursive;
-    height: 10%;
+
+/* From a screen size of 1024 pixels */
+@media screen and (min-width: 1024px) {
+  .gameCard {
+    height: 20vh;
   }
-} */
+  .flip {
+    height: 20vh;
+  }
+}
 
 /* ==========================================================================
    Helper classes
