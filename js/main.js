@@ -28,6 +28,8 @@ function flipCard() {
       alert("  Trop c'est trop ! \n Il ne faut retouner \n     que 2 cartes.");
       choiceCard[2].classList.remove("flip");
     }
+    
+    
     // si le bon nombre de card est choisi lancer la comparaison.  
     else if (choiceCard.length === 2) {
       // la methode setTimeOut permet de différer la fonction compareCard de 1s.
@@ -37,7 +39,14 @@ function flipCard() {
 
 // Fonction compareCard pour identifier les card avec data-name et comparer si identique.
 function compareCard() {
-  if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
+   if  (choiceCard[0].dataset.number === choiceCard[1].dataset.number) {
+    // alert(" triche");
+    
+    choiceCard[0].classList.remove("flip");
+    choiceCard[1].classList.remove("flip");
+    choiceCard = [];
+  }
+  else if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
     // si toutes les paires sont trouvées, proposition de recommencer le jeu.
     let winningPair = document.querySelectorAll(".flip");
     if (winningPair.length === 12) {
