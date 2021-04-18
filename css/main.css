@@ -86,7 +86,6 @@ textarea {
 /*==========================================================================
   Author's custom styles
   ========================================================================== */
-
 #gameDiv {
   height: 100vh;
   width: 100%;
@@ -132,19 +131,19 @@ a {
   height: 100%;
 }
 
-/*===================================================
-  Configuration une fois la fonction flipCard activée
-  =================================================== */
+/*===========================================================
+  Configuration once the flipCard function has been activated
+  =========================================================== */
 .flip {
   transform: rotate3d(0,1,1,360deg);
   /* transform: rotateY(180deg); */
   height: 15vh;
 }
 
-/*=================================== 
-  Configuration pour l'affichage des 
-  couleurs des cartes retournéés.
-  ===================================*/
+/*============================
+  Configuration for displaying
+  colors of returned cards. 
+  ============================*/
 .flip [data-name="yellow"] {
   background-color: yellow;
   color: yellow;
@@ -175,27 +174,35 @@ a {
   color: grey;
 }
 
-/*===============================================
-  Configuration pour différentes tailles d'écrans
-  ===============================================*/
+/*========================================
+  Configuration for different screen sizes 
+  ========================================*/
 
-/* Configuration spéciale pour une taille d'écran
- de 320 pixels et moins */
+/* Special configuration for a screen size
+   320 pixels and less */
 @media screen and (max-width: 320px) {
   #smallConfigFoot  {
     display: none;
   }
 }
 
-/* Configuration spéciale pour une taille d'écran
- de 768 pixels et moins */
+/* Special configuration for a screen size
+   768 pixels and less */
 @media screen and (max-width: 768px) {
   img {
     max-width: 10%;
   }
 }
 
-/* A partir d'une taille d'écran de 1024 pixels */
+/* Special configuration for a screen height
+   768 pixels and less */
+   @media screen and (max-height: 768px) {
+    #mediumConfigFoot{
+      display: none;
+    }
+  }
+
+/* From a screen size of 1024 pixels */
 @media screen and (min-width: 1024px) {
   .gameCard {
     height: 20vh;

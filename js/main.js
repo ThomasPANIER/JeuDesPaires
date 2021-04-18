@@ -1,77 +1,59 @@
-// Récupérer les balises html <section> sous forme de tableau.
+// Get the html <section> tags in the form of a table. 
 const sections = document.querySelectorAll(".col-3");
 
-// Récupérer les éléments html card sous forme de tableau.
+// Get the html card elements in the form of an array.
 const cards = document.querySelectorAll(".gameCard");
 
-// La méthode forEach() permet d'exécuter une fonction sur chaque élément du tableau.
-  // on ajoute ensuite aux éléments un écouteur d'événements, ici un click sur une card pour y ajouter la fonction. 
+// The forEach () method is used to execute a function on each element of the array.
+  // an event listener is then added to the elements, here a click on a card to add the function.
 cards.forEach(card => card.addEventListener("click", flipCard));
-// Même finalité que la fonction fléché.
-  // for (card of cards) {
-  //   card = card.addEventListener("click", flipCard);
-  // }
 
-// Stocker les choix de l'utilisateur pour la 1ere et 2eme card et comparer les choix.
-  // Les cartes retournées sont stocker dans un tableau vide.
+// Store the user's choices for the 1st and 2nd card and compare the choices.
+  // The returned cards are stored in an empty array.
 let choiceCard = [];
 
-// Fonction flipCard() appliquée par foreach() permet d'accéder à l'élément card pour appliquer la méthode add.
+// FlipCard () function applied by foreach () allows access to the card element to apply the add method.
 function flipCard() {
-  // Ajout de la classe "flip" à l'élément card.
+  // Added the "flip" class to the card element. 
   this.classList.add("flip");
-  // insérer les choix dans le tableau vide choiceCard.
+  // insert the choices into the empty choiceCard array.
   choiceCard.push(this);
-  // Vérifier qu'il y a bien 2 card dans le tableau pour pouvoir comparer.
-    // si plus de 2 card choisi lancer une alert et retourner les card.
+  // Check that there are 2 cards in the table to be able to compare.
+    // if more than 2 cards chosen, launch an alert and return the cards.
     if  (choiceCard.length > 2) {
       alert("  Trop c'est trop ! \n Il ne faut retouner \n     que 2 cartes.");
       choiceCard[2].classList.remove("flip");
     }
-    // si le bon nombre de card est choisi lancer la comparaison.  
+    // if the right number of cards is chosen, start the comparison.  
     else if (choiceCard.length === 2) {
-      // la methode setTimeOut permet de différer la fonction compareCard de 1s.
+      // the setTimeOut method allows to defer the compareCard function by 1s.
       setTimeout(function(){compareCard();}, 1000);
     }  
 };
 
-// Fonction compareCard pour identifier les card avec data-name et comparer si identique.
+// CompareCard function to identify cards with data-name and compare if identical.
 function compareCard() {
   if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
-    // si toutes les paires sont trouvées, proposition de recommencer le jeu.
+    // if all the pairs are found, offer to restart the game.
     let winningPair = document.querySelectorAll(".flip");
     if (winningPair.length === 12) {
-      alert("jeu fini ! Pour rejouer cliquez sur Jeu des paires");
+      alert("Bien joué vous avez touvez toutes les paires ! \n    Pour rejouer cliquez sur Jeu des paires");
     }
-    // sinon le jeu continue.
-
-    // else {
-    // win();
-    // }  
+    // if not the game continues.
   }
-  // si choix pas identiques enlève la classe "flip" pour cacher de nouveau les card.
+  // if the choice is not identical, remove the "flip" class to hide the cards again.
   else {
-    //loose();
     choiceCard[0].classList.remove("flip");
     choiceCard[1].classList.remove("flip");
   }
-  // Remet le tableau de stockage des choix à vide.
+  // Empty the choice storage array.
   choiceCard = [];
 };
 
-// function win() {
-//   alert("une paire trouvée !");
-// };
-
-// function loose() {
-//   alert("ce n'est pas une paire");
-// };
-
-// Fonction pour ranger les balises html ciblées et les redisposer de manière aléatoire.
+// Function to arrange the targeted html tags and rearrange them randomly.
 (function shuffle() {
   sections.forEach(section => {
     let randomPosition = Math.floor(Math.random() * 12);
     section.style.order = randomPosition;
   });
 })();
-//shuffle();
