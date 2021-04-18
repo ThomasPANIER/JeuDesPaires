@@ -33,7 +33,13 @@ function flipCard() {
 
 // CompareCard function to identify cards with data-name and compare if identical.
 function compareCard() {
-  if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
+  // check that the click is not twice on the same card.
+  if  (choiceCard[0].dataset.number === choiceCard[1].dataset.number) {    
+    choiceCard[0].classList.remove("flip");
+    choiceCard[1].classList.remove("flip");
+    choiceCard = [];
+  }
+  else if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
     // if all the pairs are found, offer to restart the game.
     let winningPair = document.querySelectorAll(".flip");
     if (winningPair.length === 12) {
