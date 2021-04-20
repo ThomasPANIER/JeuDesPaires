@@ -39,7 +39,11 @@ function compareCard() {
     choiceCard[1].classList.remove("flip");
     choiceCard = [];
   }
+  // one pair found.
   else if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
+    // we remove eventListener to not be able to reclick on the pair.
+    choiceCard[0].removeEventListener("click", flipCard);
+    choiceCard[1].removeEventListener("click", flipCard);
     // if all the pairs are found, offer to restart the game.
     let winningPair = document.querySelectorAll(".flip");
     if (winningPair.length === 12) {
