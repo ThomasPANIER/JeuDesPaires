@@ -47,9 +47,12 @@ function compareCard() {
     choiceCard = [];
   }
   else if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
+    // on retire eventListener pour ne plus pouvoir reclick sur la paire.
+    choiceCard[0].removeEventListener("click", flipCard);
+    choiceCard[1].removeEventListener("click", flipCard);
     // si toutes les paires sont trouvées, proposition de recommencer le jeu.
     let winningPair = document.querySelectorAll(".flip");
-    if (winningPair.length === 12) {
+    if (winningPair.length === 12) {      
       alert("jeu fini ! Pour rejouer cliquez sur Jeu des paires");
     }
     // sinon le jeu continue.
