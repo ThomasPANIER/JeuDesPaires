@@ -37,7 +37,6 @@ function compareCard() {
   if  (choiceCard[0].dataset.number === choiceCard[1].dataset.number) {    
     choiceCard[0].classList.remove("flip");
     choiceCard[1].classList.remove("flip");
-    choiceCard = [];
   }
   // one pair found.
   else if (choiceCard[0].dataset.name === choiceCard[1].dataset.name) {
